@@ -1,12 +1,10 @@
-def initialize_board():
-    boardinit = []
-    num_rows = int(input("What would you like the height of the board to be? "))
-    num_cols = int(input("What would you like the length of the board to be? "))
+def initialize_board(num_rows, num_cols):
+    board = []
     for i in range(num_rows):
-        boardinit.append([])
+        board.append([])
         for j in range(num_cols):
-            boardinit[i].append("-")
-    return boardinit
+            board[i].append("-")
+    return board
 
 def print_board(board):
     count = 0
@@ -44,7 +42,9 @@ def check_if_winner(board, col, row, chip_type):
             return True
     return False
 
-board = initialize_board()
+rows = int(input("What would you like the height of the board to be? "))
+cols = int(input("What would you like the length of the board to be? "))
+board = initialize_board(rows, cols)
 print_board(board)
 print("\n\nPlayer 1: x\nPlayer 2: o")
 win = False
@@ -69,5 +69,4 @@ while not win:
     player += 1
     if player % 2 == 1:
         player = 1
-
 
