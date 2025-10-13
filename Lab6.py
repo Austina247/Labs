@@ -17,6 +17,7 @@ def print_board(board):
             print(item,end=" ")
     print()
 
+
 def insert_chip(board, col, chip_type):
     for r in range(len(board)-1,-1,-1):
         if board[r][col] == "-":
