@@ -70,3 +70,4 @@ while not win:
     if player % 2 == 1:
         player = 1
 
+
