@@ -1,12 +1,12 @@
 def initialize_board():
-    board = []
+    boardinit = []
     num_rows = int(input("What would you like the height of the board to be? "))
     num_cols = int(input("What would you like the length of the board to be? "))
     for i in range(num_rows):
-        board.append([])
+        boardinit.append([])
         for j in range(num_cols):
-            board[i].append("-")
-    return board
+            boardinit[i].append("-")
+    return boardinit
 
 def print_board(board):
     count = 0
