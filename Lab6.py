@@ -9,8 +9,7 @@ def initialize_board(num_rows, num_cols):
 def print_board(board):
     count = 0
     for rows in list(board):
-        if count != 0:
-            print()
+        print()
         count += 1
         for item in rows:
             print(item,end=" ")
