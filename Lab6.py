@@ -17,7 +17,7 @@ def print_board(board):
 
 def insert_chip(board, col, chip_type):
     for r in range(len(board)-1,-1,-1):
-        if board[r][col] == "_":
+        if board[r][col] == "-":
             board[r][col] = chip_type
             break
     return r
@@ -61,7 +61,7 @@ while not win:
         win = True
         print(f"Player {player} won the game!")
         break
-    elif board[0].count("_") == 0:
+    elif board[0].count("-") == 0:
         win = True
         print("Draw. Nobody wins.")
         break
