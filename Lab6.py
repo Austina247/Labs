@@ -1,10 +1,11 @@
 def initialize_board(num_rows, num_cols):
-    board = []
-    for i in range(num_rows):
-        board.append([])
-        for j in range(num_cols):
-            board[i].append("-")
-    return board
+    if __name__ == '__main__':
+        board = []
+        for i in range(num_rows):
+            board.append([])
+            for j in range(num_cols):
+                board[i].append("-")
+        return board
 
 def print_board(board):
     count = 0
