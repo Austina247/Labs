@@ -3,7 +3,7 @@ def initialize_board(num_rows, num_cols):
     for i in range(num_rows):
         board.append([])
         for j in range(num_cols):
-            board[i].append("_")
+            board[i].append("-")
     return board
 
 def print_board(board):
