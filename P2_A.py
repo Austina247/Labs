@@ -32,3 +32,5 @@ def main():
         elif option == 6:
             print("Displaying image...")
             console_gfx.display_image(image_data)
+
+main()
