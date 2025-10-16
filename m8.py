@@ -9,7 +9,7 @@ def flatten(x):
 
 def mystery1(n):
     a, b, c, d, e = 1, 2, 3, 4, 5
-    while n >= 0:
+    while n > 0:
         a,b,c,d,e =  b, c, d, e, a-c+e
         n -= 1
     return a
