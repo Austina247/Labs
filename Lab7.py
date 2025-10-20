@@ -1,13 +1,9 @@
 def reformat(data):
-    drinks = {}
-    foods = {}
+    dic1 = {}
     for dict in data:
-        if dict["type"] =="Drink":
-            drinks[dict["name"]] = dict["price"]
+        dic1[dict["type"]] = {}
     for dict in data:
-        if dict["type"] == "Food":
-            foods[dict["name"]] = dict["price"]
-    updatedData = {}
-    updatedData["Drink"] = drinks
-    updatedData["Food"] = foods
-    return updatedData
+        dic1[dict["type"]][dict["name"]] = dict["price"]
+    return dic1
+
+
