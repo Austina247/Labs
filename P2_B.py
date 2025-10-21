@@ -45,6 +45,7 @@ def encode_rle(flat_data):
         else:
             rle_data.append(count)
             rle_data.append(flat_data[i])
+            count = 1
         if count == 15:
             rle_data.append(15)
             rle_data.append(flat_data[i])
