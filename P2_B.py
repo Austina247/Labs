@@ -49,6 +49,8 @@ def encode_rle(flat_data):
             rle_data.append(15)
             rle_data.append(flat_data[i])
             count = 1
+    rle_data.append(count)
+    rle_data.append(flat_data[len(flat_data)-1])
     return rle_data
 
 def get_decoded_length(rle_data):
