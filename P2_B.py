@@ -34,15 +34,12 @@ def count_runs(flat_data):
         if count == 15:
             num += 1
             count = 1
-    if flat_data[len(flat_data)-1] == flat_data[len(flat_data)-2]:
-        return num
-    else:
         return num + 1
 
 def encode_rle(flat_data):
     count = 1
     rle_data = []
-    for i in range(len(flat_data)):
+    for i in range(len(flat_data)-1):
         if flat_data[i] == flat_data[i+1]:
             count += 1
         elif count == 15:
