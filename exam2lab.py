@@ -7,6 +7,7 @@ def print_backwards(string):
         print_backwards(string[:-1])
 
 def format_names(data):
+    formated = [data[0]]
     if data[0].find(",") == -1:
         formated = data[0][data[0].find(" ") + 1:] +", " + data[0][:data[0].find(" ")]
 
@@ -32,6 +33,4 @@ def process_list(data):
         if i % 2 == 1:
             new_list.append(data[i]*10)
     return new_list
-
-
 
