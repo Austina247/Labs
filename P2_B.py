@@ -18,7 +18,7 @@ def to_hex_string(data):
     string = ""
     for i in range(len(data)):
         if data[i] < 10:
-            string = string + data[i]
+            string = string + str(data[i])
         else:
             string = string + hex(data[i])
 
@@ -49,7 +49,7 @@ def encode_rle(flat_data):
         if count == 15:
             rle_data.append(15)
             rle_data.append(flat_data[i])
-            count = 1
+            count = 0
     rle_data.append(count)
     rle_data.append(flat_data[len(flat_data)-1])
     return rle_data
@@ -100,4 +100,3 @@ def main():
         elif option == 6:
             print("Displaying image...")
             console_gfx.display_image(image_data)
-
