@@ -34,7 +34,7 @@ def count_runs(flat_data):
         if count == 15:
             num += 1
             count = 1
-        return num + 1
+    return num + 1
 
 def encode_rle(flat_data):
     count = 1
