@@ -25,8 +25,8 @@ def to_hex_string(data):
 def count_runs(flat_data):
     count = 1
     num = 0
-    for i in range(len(flat_data)):
-        if flat_data[i] == flat_data[+1]:
+    for i in range(len(flat_data)-1):
+        if flat_data[i] == flat_data[i+1]:
             count += 1
         if count == 1 or count == 15:
             num += 1
@@ -95,4 +95,4 @@ def main():
             print("Displaying image...")
             console_gfx.display_image(image_data)
 
-main()
+print(count_runs([ 9, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ]))
