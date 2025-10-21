@@ -1,6 +1,6 @@
 def print_backwards(string):
     if len(string) == 1:
-        print(string)
+        print(string,end="")
         return
     else:
         print(string[-1], end="")
@@ -8,11 +8,11 @@ def print_backwards(string):
 
 def format_names(data):
     if data[0].find(",") == -1:
-        data[0] = data[0][data[0].find(" ") + 1:] +", " + data[0][:data[0].find(" ")]
+        formated = data[0][data[0].find(" ") + 1:] +", " + data[0][:data[0].find(" ")]
 
     if len(data) == 1:
         return data
-    new_data = [data[0]] + format_names(data[1:])
+    new_data = [formated] + format_names(data[1:])
     return new_data
 
 def sum_a(data):
