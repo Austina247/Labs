@@ -21,6 +21,7 @@ def to_hex_string(data):
             string = string + str(data[i])
         else:
             string = string + hex(data[i])
+    return string
 
 def count_runs(flat_data):
     count = 1
