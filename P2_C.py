@@ -77,6 +77,26 @@ def string_to_data(data_string):
             rle.append(int(char,16))
     return rle
 
+def to_rle_string(rle_data):
+    string = ""
+    for i in range(0,len(rle_data),2):
+        string += rle_data[i]
+        if rle_data[i+1] < 10:
+            string += str(rle_data[i+1]) + ":"
+
+def string_to_rle(rle_string):
+    list_rle = []
+    while rle_string.find(":") != -1:
+        index = rle_string.find(":")
+        list_rle.append(rle_string[:(index-1)])
+        del rle_string[:(index-1)]
+        if type(rle_string[0]) == int :
+            rle_string.append(rle_string[0])
+        else:
+            rle_string.append(int(rle_string[0],16))
+        del rle_string[:index]
+    return list_rle
+
 def main():
     print("Welcome to the RLE image encoder!\n")
     print("Displaying Spectrum Image:")
