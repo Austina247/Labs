@@ -25,12 +25,12 @@ def sum_a(data):
 
 def process_list(data):
     new_list = []
-    for i in len(data):
+    for i in range(0,len(data)-1):
         if i % 2 == 0:
-            new_list.append(str(i))
-    for i in len(data):
+            new_list.append(str(data[i]))
+    for i in range(0,len(data)-1):
         if i % 2 == 1:
-            new_list.append(i*10)
+            new_list.append(data[i]*10)
     return new_list
 
 
