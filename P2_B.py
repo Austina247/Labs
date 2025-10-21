@@ -20,7 +20,7 @@ def to_hex_string(data):
         if data[i] < 10:
             string = string + str(data[i])
         else:
-            string = string + hex(data[i])
+            string = string + hex(data[i])[-1]
     return string
 
 def count_runs(flat_data):
@@ -101,3 +101,4 @@ def main():
         elif option == 6:
             print("Displaying image...")
             console_gfx.display_image(image_data)
+
