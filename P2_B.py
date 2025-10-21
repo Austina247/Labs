@@ -42,13 +42,13 @@ def encode_rle(flat_data):
     for i in range(len(flat_data)-1):
         if flat_data[i] == flat_data[i+1]:
             count += 1
-        elif count == 15:
-            rle_data.append(15)
-            rle_data.append(flat_data[i])
-            count = 1
         else:
             rle_data.append(count)
             rle_data.append(flat_data[i])
+        if count == 15:
+            rle_data.append(15)
+            rle_data.append(flat_data[i])
+            count = 1
     return rle_data
 
 def get_decoded_length(rle_data):
