@@ -12,7 +12,7 @@ def format_names(data):
         formated = data[0][data[0].find(" ") + 1:] +", " + data[0][:data[0].find(" ")]
 
     if len(data) == 1:
-        return formated
+        return [formated]
     new_data = [formated] + format_names(data[1:])
     return new_data
 
