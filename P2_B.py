@@ -28,7 +28,10 @@ def count_runs(flat_data):
     for i in range(len(flat_data)-1):
         if flat_data[i] == flat_data[i+1]:
             count += 1
-        if count == 1 or count == 15:
+        else:
+            num += 1
+            count = 1
+        if count == 15:
             num += 1
             count = 1
     if flat_data[len(flat_data)-1] == flat_data[len(flat_data)-2]:
@@ -39,7 +42,7 @@ def count_runs(flat_data):
 def encode_rle(flat_data):
     count = 1
     rle_data = []
-    for i in len(flat_data):
+    for i in range(len(flat_data)):
         if flat_data[i] == flat_data[i+1]:
             count += 1
         elif count == 15:
@@ -98,4 +101,3 @@ def main():
             print("Displaying image...")
             console_gfx.display_image(image_data)
 
-#print(count_runs([ 9, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ]))
