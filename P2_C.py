@@ -64,7 +64,7 @@ def get_decoded_length(rle_data):
 def decode_rle(rle_data):
     unzipped_rle = []
     for i in range(0,len(rle_data),2):
-        for j in range(rle_data[i]):
+        for j in range(int(rle_data[i])):
             unzipped_rle.append(rle_data[i+1])
     return unzipped_rle
 
@@ -86,15 +86,25 @@ def to_rle_string(rle_data):
 
 def string_to_rle(rle_string):
     list_rle = []
-    while rle_string.find(":") != -1:
+    while True:
+        if len(rle_string) == 0:
+            break
+        elif rle_string.find(":") == -1:
+            list_rle.append(rle_string[:len(rle_string)-1])
+            rle_string = rle_string[len(rle_string)-1:]
+            if type(rle_string[0]) == int:
+                list_rle.append(rle_string[0])
+            else:
+                list_rle.append(int(rle_string[0], 16))
+            break
         index = rle_string.find(":")
         list_rle.append(rle_string[:(index-1)])
-        del rle_string[:(index-1)]
+        rle_string = rle_string[(index-1):]
         if type(rle_string[0]) == int :
-            rle_string.append(rle_string[0])
+            list_rle.append(rle_string[0])
         else:
-            rle_string.append(int(rle_string[0],16))
-        del rle_string[:index]
+            list_rle.append(int(rle_string[0],16))
+        rle_string = rle_string[rle_string.find(":")+1:]
     return list_rle
 
 def main():
