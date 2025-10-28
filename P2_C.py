@@ -114,11 +114,29 @@ def main():
             print("Test image data loaded.")
         elif option == 3:
             rle_string = input("Enter an RLE string to be decoded: ")
+            image_data = string_to_rle(rle_string)
+            image_data = decode_rle(image_data)
         elif option == 4:
             rle_hex_string = input("Enter the hex string holding RLE data: ")
+            image_data = string_to_data(rle_hex_string)
+            image_data = decode_rle(image_data)
         elif option == 5:
             rle_flat_hex_string = input("Enter the hex string holding flat data: ")
+            image_data = string_to_data(rle_flat_hex_string)
         elif option == 6:
             print("Displaying image...")
             console_gfx.display_image(image_data)
+        elif option == 7:
+            print(f"RLE representation: {to_rle_string(encode_rle(image_data))}")
+        elif option == 8:
+            print(f"RLE hex values: {to_hex_string(encode_rle(image_data))}")
+        elif option == 9:
+            print("Flat hex values: ", end = "")
+            for i in image_data:
+                if i >9:
+                    print(hex(i)[-1], end = "")
+                else:
+                    print(i, end = "")
+            print()
+
 
