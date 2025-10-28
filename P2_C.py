@@ -120,7 +120,7 @@ def main():
             file_name = input("Enter the name of the file: ")
             image_data = console_gfx.load_file(file_name)
         elif option == 2:
-            image_data = console_gfx.load_file(console_gfx.test_image)
+            image_data = console_gfx.test_image
             print("Test image data loaded.")
         elif option == 3:
             rle_string = input("Enter an RLE string to be decoded: ")
