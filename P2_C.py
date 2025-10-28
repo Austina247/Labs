@@ -71,18 +71,16 @@ def decode_rle(rle_data):
 def string_to_data(data_string):
     rle = []
     for char in data_string:
-        if type(char) == int:
-            rle.append(char)
-        else:
             rle.append(int(char,16))
     return rle
 
 def to_rle_string(rle_data):
     string = ""
     for i in range(0,len(rle_data),2):
-        string += rle_data[i]
+        string += str(rle_data[i])
         if rle_data[i+1] < 10:
             string += str(rle_data[i+1]) + ":"
+    return string
 
 def string_to_rle(rle_string):
     list_rle = []
