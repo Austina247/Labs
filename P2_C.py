@@ -77,9 +77,10 @@ def string_to_data(data_string):
 def to_rle_string(rle_data):
     string = ""
     for i in range(0,len(rle_data),2):
+        if i != 0:
+            string += ":"
         string += str(rle_data[i])
-        if rle_data[i+1] < 10:
-            string += str(rle_data[i+1]) + ":"
+        string += str(hex(rle_data[i+1])[-1])
     return string
 
 def string_to_rle(rle_string):
@@ -149,5 +150,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-
 
