@@ -139,4 +139,6 @@ def main():
                     print(i, end = "")
             print()
 
+main()
+
 
